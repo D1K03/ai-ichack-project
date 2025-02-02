@@ -39,7 +39,8 @@ def debug_code():
         "identify any errors or issues, and for each problem, provide:\n"
         "  - A brief error message with the line number (if applicable).\n"
         "  - A detailed explanation of why it is a problem.\n"
-        "  - Suggestions on how to fix it.\n\n"
+        "  - Suggestions on how to fix it.\n"
+        "  - Provide Explaination on the topic that they seem to be struggling with in a structured way\n\n"
         f"Code:\n{code}\n"
     )
 

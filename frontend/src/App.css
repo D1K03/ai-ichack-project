@@ -1,0 +1,27 @@
+/* Reset styles for good measure */
+body, html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  font-family: Arial, sans-serif;
+  background-color: #0D1117;
+  color: white;
+}
+
+/* Center the App container */
+.App {
+  text-align: center; /* Centers the h1 horizontally */
+  display: flex;
+  flex-direction: column; /* Stack items vertically */
+  align-items: center; /* Centers child items horizontally */
+  justify-content: flex-start; /* Push items towards the top */
+  height: 100vh; /* Full viewport height */
+}
+
+/* Center the h1 specifically */
+.App h1 {
+  font-size: 3rem;
+  margin: 20px 0; /* Add vertical spacing */
+  color: white;
+}

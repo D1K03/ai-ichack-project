@@ -1,4 +1,3 @@
-/* Reset and global styles */
 * {
   margin: 0;
   padding: 0;
@@ -13,31 +12,28 @@ body, html {
   color: white;
 }
 
-/* Header container */
 .header-container {
   display: flex;
-  justify-content: center; /* Center horizontally */
-  align-items: center; /* Center vertically */
-  height: 80px; /* Adjust header height */
-  width: 100%; /* Full width */
+  justify-content: center;
+  align-items: center;
+  height: 80px;
+  width: 100%;
   background-color: #0D1117;
 }
 
-/* Main container */
 .debugger-container {
   display: flex;
-  flex-direction: row; /* Arrange panels side by side */
-  width: 100vw; /* Full width of the viewport */
-  height: calc(100vh - 80px); /* Full height minus header height */
-  padding: 20px; /* Padding around the container */
-  gap: 20px; /* Space between panels */
+  flex-direction: row;
+  width: 100vw;
+  height: calc(100vh - 80px);
+  padding: 20px;
+  gap: 20px;
   background-color: #0D1117;
-  margin: 0 auto; /* Center horizontally */
+  margin: 0 auto;
 }
 
-/* Left panel */
 .code-panel {
-  flex: 3; /* Take more space (3:1 ratio) */
+  flex: 3;
   display: flex;
   flex-direction: column;
   background: #161B22;
@@ -47,9 +43,8 @@ body, html {
   overflow: hidden;
 }
 
-/* Right panel */
 .analysis-panel {
-  flex: 1; /* Take less space */
+  flex: 1;
   display: flex;
   flex-direction: column;
   background: #161B22;
@@ -59,7 +54,6 @@ body, html {
   overflow: hidden;
 }
 
-/* Panel headers */
 .panel-header {
   font-size: 1.2rem;
   margin-bottom: 10px;
@@ -67,7 +61,6 @@ body, html {
   text-align: left;
 }
 
-/* Code editor */
 .code-input {
   flex: 1;
   font-family: monospace;
@@ -81,7 +74,6 @@ body, html {
   overflow-y: auto;
 }
 
-/* Analysis output */
 .analysis-output {
   flex: 1;
   font-size: 14px;
@@ -94,8 +86,46 @@ body, html {
   white-space: pre-wrap;
 }
 
-.debug-button {
+.action-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 15px;
+  }
+  
+  .debug-button {
     margin-top: 10px;
-    background-color: #21262D;
-    margin-right: 100px;
+    padding: 10px 20px;
+    background-color: white;
+    color: #21262D;
+    font-size: 1.5rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .debug-button:hover {
+    background-color: #e1e1e1;
+  }
+  
+
+.tts-button {
+    margin-top: 10px;
+    padding: 10px;
+    background-color: white;
+    color: #21262D;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+.tts-button:hover {
+    background-color: #e1e1e1;
 }
+  
+  

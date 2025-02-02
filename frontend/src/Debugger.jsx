@@ -7,16 +7,17 @@ const Debugger = () => {
   const [analysis, setAnalysis] = useState("");
   const [loading, setLoading] = useState(false);
   const [enableTTS, setEnableTTS] = useState(false);
+  const [showPlayTTSButton, setShowPlayTTSButton] = useState(false);
 
   const handleDebug = async () => {
     setLoading(true);
+    setShowPlayTTSButton(false);
     try {
       const response = await axios.post("http://localhost:5000/debug", { code });
-      setAnalysis(response.data.analysis);
+      const analysisText = response.data.analysis;
+      setAnalysis(analysisText);
 
-      if (enableTTS) {
-        handleNativeTTS(response.data.analysis);
-      }
+      setShowPlayTTSButton(true);
     } catch (error) {
       console.error("Error during debugging:", error);
       setAnalysis("An error occurred while analyzing your code.");
@@ -24,14 +25,21 @@ const Debugger = () => {
     setLoading(false);
   };
 
-  const handleNativeTTS = (text) => {
+  const handleBrowserTTS = (text) => {
     if (!text) {
       alert("No analysis to read!");
       return;
     }
-    const speech = new SpeechSynthesisUtterance(text);
-    speech.lang = "en-US";
-    window.speechSynthesis.speak(speech);
+
+    if ("speechSynthesis" in window) {
+      const speech = new SpeechSynthesisUtterance(text);
+      speech.lang = "en-US";
+      speech.rate = 1;
+      speech.pitch = 1;
+      window.speechSynthesis.speak(speech);
+    } else {
+      alert("Sorry, your browser does not support text-to-speech.");
+    }
   };
 
   return (
@@ -44,27 +52,23 @@ const Debugger = () => {
           onChange={(e) => setCode(e.target.value)}
         />
         <div className="action-row">
-          <button
-            className="debug-button"
-            onClick={handleDebug}
-            disabled={loading}
-          >
+          <button className="debug-button" onClick={handleDebug} disabled={loading}>
             {loading ? "Analysing" : "Analyse Code"}
           </button>
-          <label className="tts-checkbox">
-            <input
-              type="checkbox"
-              checked={enableTTS}
-              onChange={(e) => setEnableTTS(e.target.checked)}
-            />
-            Enable TTS
-          </label>
         </div>
       </div>
-
       <div className="analysis-panel">
         <h2>Breakdown</h2>
         <pre className="analysis-output">{analysis}</pre>
+
+        {showPlayTTSButton && (
+          <button
+            className="tts-button"
+            onClick={() => handleBrowserTTS(analysis)}
+          >
+            🔊 Play Analysis
+          </button>
+        )}
       </div>
     </div>
   );

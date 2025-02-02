@@ -1,4 +1,3 @@
-/* Reset styles for good measure */
 body, html {
   margin: 0;
   padding: 0;
@@ -9,19 +8,16 @@ body, html {
   color: white;
 }
 
-/* Center the App container */
 .App {
-  text-align: center; /* Centers the h1 horizontally */
+  text-align: center;
   display: flex;
-  flex-direction: column; /* Stack items vertically */
-  align-items: center; /* Centers child items horizontally */
-  justify-content: flex-start; /* Push items towards the top */
-  height: 100vh; /* Full viewport height */
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  height: 100vh;
 }
 
-/* Center the h1 specifically */
 .App h1 {
   font-size: 2.5rem;
-  margin: 20px 0; /* Add vertical spacing */
-  color: white;
+  margin: 20px 0;
 }

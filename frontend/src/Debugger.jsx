@@ -40,12 +40,8 @@ const Debugger = () => {
 
       {/* Right Panel */}
       <div className="analysis-panel">
-        <h2>Analysis</h2>
-        {loading ? (
-          <p>Analysing</p>
-        ) : (
-          <pre className="analysis-output">{analysis}</pre>
-        )}
+        <h2>Breakdown</h2>
+        <pre className="analysis-output">{analysis}</pre>
       </div>
     </div>
   );

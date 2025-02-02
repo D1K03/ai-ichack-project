@@ -2,9 +2,12 @@
 
 Landing Page
 
-![image](https://github.com/user-attachments/assets/4e0a12e1-0bf2-4111-b847-e043b5e12c91)
+![image](https://github.com/user-attachments/assets/4c8b300c-f67c-403e-908e-2ba6a1c027c1)
+
+
 
 
 Functional
 
-![image](https://github.com/user-attachments/assets/0613f35b-80ea-4f63-b071-661a54013f3e)
+![image](https://github.com/user-attachments/assets/18bce61d-9bd3-4536-ad28-2284ce5ddb40)
+
